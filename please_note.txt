@@ -1,0 +1,4 @@
+Cygwin has been used to navigate through directories.
+
+python3 used to here (as in Cygwin) is version 3.4.3.
+
