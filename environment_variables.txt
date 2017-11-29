@@ -1,0 +1,29 @@
+System Variables:
+===================
+path:
+-----
+C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\ProgramData\Oracle\Java\javapath;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\CheckPoint\Endpoint Security\Endpoint Common\bin;C:\Python27;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files (x86)\Skype\Phone\;C:\ProgramData\chocolatey\bin;%r80_mgmt%;;C:\Program Files (x86)\Airtame
+-------
+path2:
+-------
+%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;x:\perl\bin
+-------------------
+ChocolateyInstall
+-----------------
+C:\ProgramData\chocolatey
+----------------------------
+
+=================================
+User Variables for marashid
+================================
+batch_scripts
+-----------------
+C:\Users\marashid\Documents\Personal_Stuff\scruffy_scripts\
+-------------
+Path
+---------
+C:\Users\marashid\AppData\Local\Programs\Python\Python36-32\Scripts\;C:\Users\marashid\AppData\Local\Programs\Python\Python36-32\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;%batch_scripts%;
+---------
+python2
+----------
+C:\Python27
