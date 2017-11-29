@@ -1,0 +1,12 @@
+'''
+Boolean operators aren't just evaluated from left to right. Just like with arithmetic operators, there's an order of operations for boolean operators:
+
+not is evaluated first;
+and is evaluated next;
+or is evaluated last.
+For example, True or not False and False returns True.
+
+True or not False and False. not gets evaluated first, so we have
+True or True and False. and goes next, so we get
+True or False. As we've seen, True or False is True, so the value finally returned is True!
+'''
