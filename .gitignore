@@ -1,2 +1,9 @@
+.pydevproject
+.project
+.metadata
 ~*
 Packt Materials
+.README
+R80_Mgmt
+*__pycache__*
+*dist*
