@@ -18,7 +18,7 @@ from dropbox.files import WriteMode
 # Add OAuth2 access token here.
 # You can generate one for yourself in the App Console.
 # See <https://blogs.dropbox.com/developers/2014/05/generate-an-access-token-for-your-own-account/>
-ACCESS_TOKEN = 'CBC0_28g3a4AAAAAAAAFYw7pXTiMzuLD4fMfHYW3L-PokM5o6h34BiniKHP3UHPa'
+ACCESS_TOKEN = ''
 dbx = None
 
 # Uploads contents of LOCALFILE to Dropbox
