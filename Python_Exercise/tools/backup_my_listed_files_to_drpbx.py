@@ -56,7 +56,7 @@ def _get_leading_time(loc_modtime, drpbx_modtime):
 dropbox_api_gateway.initiate_drpbx_obj()
 
 ## read all Local files and their corresponding dropbox locations from a csv file
-my_backup_files_list = csv_reader.read_csv("files_to_backup_test.csv")
+my_backup_files_list = csv_reader.read_csv("./data_files/files_to_backup_test.csv")
 
 ## now iterate through each item in the list and perform operations
 for record in my_backup_files_list:
@@ -100,7 +100,6 @@ for record in my_backup_files_list:
             sys.exit("program is exiting due to unknown exception...")    
     
     elif(leading_time == drpbx_file_modified_time):
-        print("dropbox file is ahead of the local copy, downloading latest file from dropbox...")
-        print("***yet to implement***")
+        print("dropbox file is ahead of the local copy, downloading latest file from dropbox...(***yet to implement***)")
     else:
         print("both files are same (ignoring updates in last 5 hours). No upload/download has taken place.")

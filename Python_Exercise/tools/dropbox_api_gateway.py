@@ -18,7 +18,7 @@ from dropbox.files import WriteMode
 # Add OAuth2 access token here.
 # You can generate one for yourself in the App Console.
 # See <https://blogs.dropbox.com/developers/2014/05/generate-an-access-token-for-your-own-account/>
-ACCESS_TOKEN = ''
+ACCESS_TOKEN = None
 dbx = None
 
 # Uploads contents of LOCALFILE to Dropbox
@@ -88,6 +88,7 @@ def select_revision():
 ########################################################    
 def get_my_drpbx_file_metadata(dropbox_file_path):
     '''
+    Get the metadata for a given file in dropbox
     example metadata: FileMetadata(name='my cv23.pdf', id='id:CJ_idZ9Oln4AAAAAAAABow', client_modified=datetime.datetime(2014, 5, 14, 22, 16, 29), server_modified=datetime.datetime(2014, 5, 14, 22, 16, 33), rev='2f0d02782059', size=98739, path_lower='/cv stuff/tailored cvs/my cv23.pdf', path_display='/cv stuff/tailored CVs/my cv23.pdf', parent_shared_folder_id=None, media_info=None, sharing_info=None, property_groups=None, has_explicit_shared_members=None, content_hash='6c250b055fbd5f77cb457e99ee60228e1c6c71e417fc5f6abb24ffcd44d5f644')
     '''
     if(dbx is None):
@@ -101,13 +102,21 @@ def get_my_drpbx_file_metadata(dropbox_file_path):
 #     print(file_metadata.size)
     return {"path":file_metadata.path_display, "modify_time":file_metadata.server_modified, "size":file_metadata.size}
 
+def print_my_drpbx_files():
+    '''
+    print all file names in the dropbox root directory
+    '''
+    for entry in dbx.files_list_folder('').entries:
+        print(entry.name)
 
 def initiate_drpbx_obj():
+    global ACCESS_TOKEN
+    with open("./data_files/do_not_commit.txt") as f:
+        for line in f:
+            ACCESS_TOKEN = line
     # Check for an access token
-    if (len(ACCESS_TOKEN) == 0):
-        sys.exit("ERROR: Looks like you didn't add your access token. "
-            "Open up backup-and-restore-example.py in a text editor and "
-            "paste in your token in line 14.")
+    if (len(ACCESS_TOKEN) == 0 or ACCESS_TOKEN == '' or ACCESS_TOKEN is None):
+        sys.exit("ERROR: Looks like you didn't add your access token. ")
 
     # Create an instance of a Dropbox class, which can make requests to the API.
     print("Creating a Dropbox object...")
@@ -149,10 +158,12 @@ if __name__ == '__main__':
 ########################################################
     initiate_drpbx_obj()
 
-    # Create a backup of the current settings file
-    backup(r"C:\Users\marashid\Documents\Personal_Stuff\Personal Training and Development\Python\Python_Exercise\tools\sample_CSVs\SimpleCSVSample.csv", "/SimpleCSVSample.csv")
+    ## Print all dropbox files
+#     print_my_drpbx_files()
     
-    # Get the metadata for a given file in dropbox
+    ## Create a backup of the current settings file
+#     backup(r"C:\Users\marashid\Documents\Personal_Stuff\Personal Training and Development\Python\Python_Exercise\tools\sample_CSVs\SimpleCSVSample.csv", "/SimpleCSVSample.csv")
+    
     try:
         print(type(get_my_drpbx_file_metadata("/SimpleCSVSample.csv")))
     except ApiError as err:
