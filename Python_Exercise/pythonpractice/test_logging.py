@@ -22,7 +22,8 @@ import sys, os
 
 ## in this module we use a MyFileHandler class in my_logging module in tools package, 
 ## this needs to be added to the sys.path for python to discover the module in order to import
-path_to_tools_package = os.path.abspath(os.path.join(os.path.dirname(__file__), "../tools"))
+path_to_tools_package = os.path.abspath(os.path.join(os.path.dirname(__file__), "../tools")) # while this works fine in normal circumstances, if the program is run from a different location, such as with from a pyinstaller exe in a designated directory, it will look for ../tools/ directory relative to that location and the program will fails without much useful message
+# path_to_tools_package = os.path.abspath(r"C:\Users\marashid\Documents\Personal_Stuff\Personal Training and Development\Python\Python_Exercise\tools")
 # print(path_to_tools_package)
 sys.path.append(path_to_tools_package)
 
@@ -105,20 +106,28 @@ def evenmore_advanced_mod_named_logging():
 custom logging feature, pls read the doc in MyFileHandler to learn more
 """
 def customized_logging(filepath=None):
-#     logger = logging.getLogger()
+    input("in customized_logging func")    
+    import testAway ## no need to import this as not used in any other use cases and lines in the imported module get executed when imported
+    #     logger = logging.getLogger()
+    input("imported testAway, press any key to continue")
     my_hanlder = MyFileHandler(filepath)
-#     print((my_hanlder.baseFilename))
-    logging.basicConfig(filename=my_hanlder.baseFilename,level=logging.DEBUG)
+    input("imported MyFileHandler, press any key to continue")
     
-    logging.debug('This message should go to the log file')
-    logging.info('So should this')
-    logging.warning('And this, too')
+    print((my_hanlder.baseFilename))
+    logging.basicConfig(filename=my_hanlder.baseFilename, level=logging.DEBUG,
+                        format='%(asctime)s %(module)s.%(funcName)s line:%(lineno)s: %(levelname)-8s [%(process)d] %(message)s')
+    
+    logging.debug('Program started')
+    logging.error('calling foreign module...')
+    testAway.do_something4()
+    logging.warning('Program finished')
 
 # basic_logging()
 # configued_logging_separate_dir("./Logs/test.log")
 # multi_mod_logging()
 # datetime_logging()
 # mod_named_logging()
-evenmore_advanced_mod_named_logging()
+# evenmore_advanced_mod_named_logging()
 
-# customized_logging("./Logs/test.log")
+customized_logging()
+input("press any key to exit...")
