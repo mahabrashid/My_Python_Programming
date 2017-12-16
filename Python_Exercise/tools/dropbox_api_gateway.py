@@ -14,6 +14,8 @@ import dropbox
 from dropbox.exceptions import ApiError, AuthError
 from dropbox.files import WriteMode
 
+import logging
+
 
 # Add OAuth2 access token here.
 # You can generate one for yourself in the App Console.
@@ -24,15 +26,18 @@ dbx = None
 # Uploads contents of LOCALFILE to Dropbox
 def backup(LOCALFILE, BACKUPPATH):  ##### modified to include the parameters    #####
     if(LOCALFILE is (None or "") or BACKUPPATH is (None or "")):
-        sys.exit("invalid parameters, please enter valid LOCALFILE and BACKPATH")
+        logging.error("exiting system due to invalid parameters, please try again with valid LOCALFILE and BACKPATH")
+        sys.exit("exiting system due to invalid parameters, please try again with valid LOCALFILE and BACKPATH")
     
     ##### modified to include invalid object check    #####
     if(dbx is None):
+        logging.error("dropbox object is set to None, please initiate dropbox object first.")
         sys.exit("dropbox object is set to None, please initiate dropbox object first.")
         
     with open(LOCALFILE, 'rb') as f:
         # We use WriteMode=overwrite to make sure that the settings in the file
         # are changed on upload
+        logging.info("Uploading " + LOCALFILE + " to Dropbox as " + BACKUPPATH + "...")
         print("Uploading " + LOCALFILE + " to Dropbox as " + BACKUPPATH + "...")
         try:
             dbx.files_upload(f.read(), BACKUPPATH, mode=WriteMode('overwrite'))
@@ -41,11 +46,14 @@ def backup(LOCALFILE, BACKUPPATH):  ##### modified to include the parameters    
             # enough Dropbox space quota to upload this file
             if (err.error.is_path() and
                     err.error.get_path().reason.is_insufficient_space()):
+                logging.error("ERROR: Cannot back up; insufficient space.")
                 sys.exit("ERROR: Cannot back up; insufficient space.")
             elif err.user_message_text:
+                logging.error(err.user_message_text)
                 print(err.user_message_text)
                 sys.exit()
             else:
+                logging.error(err)
                 print(err)
                 sys.exit()
         
@@ -92,6 +100,7 @@ def get_my_drpbx_file_metadata(dropbox_file_path):
     example metadata: FileMetadata(name='my cv23.pdf', id='id:CJ_idZ9Oln4AAAAAAAABow', client_modified=datetime.datetime(2014, 5, 14, 22, 16, 29), server_modified=datetime.datetime(2014, 5, 14, 22, 16, 33), rev='2f0d02782059', size=98739, path_lower='/cv stuff/tailored cvs/my cv23.pdf', path_display='/cv stuff/tailored CVs/my cv23.pdf', parent_shared_folder_id=None, media_info=None, sharing_info=None, property_groups=None, has_explicit_shared_members=None, content_hash='6c250b055fbd5f77cb457e99ee60228e1c6c71e417fc5f6abb24ffcd44d5f644')
     '''
     if(dbx is None):
+        logging.error("dropbox object is set to None, please initiate dropbox object first.")
         sys.exit("dropbox object is set to None, please initiate dropbox object first.")
     
     file_metadata = dbx.files_get_metadata(dropbox_file_path)
@@ -111,14 +120,21 @@ def print_my_drpbx_files():
 
 def initiate_drpbx_obj():
     global ACCESS_TOKEN
-    with open("./data_files/do_not_commit.txt") as f:
-        for line in f:
-            ACCESS_TOKEN = line
-    # Check for an access token
+    try:
+        accesstoken_file = "./data_files/do_not_commit.txt"
+        with open(accesstoken_file) as f:
+            for line in f:
+                ACCESS_TOKEN = line
+    except Exception as err:
+        logging.error(err.strerror + ": " + accesstoken_file)
+        sys.exit((err.strerror + ": " + accesstoken_file))
+        # Check for an access token
     if (len(ACCESS_TOKEN) == 0 or ACCESS_TOKEN == '' or ACCESS_TOKEN is None):
+        logging.error("ERROR: Looks like you didn't add your access token. ")
         sys.exit("ERROR: Looks like you didn't add your access token. ")
 
     # Create an instance of a Dropbox class, which can make requests to the API.
+    logging.debug("Creating a Dropbox object...")
     print("Creating a Dropbox object...")
     global dbx
     dbx = dropbox.Dropbox(ACCESS_TOKEN)
@@ -127,6 +143,7 @@ def initiate_drpbx_obj():
     try:
         dbx.users_get_current_account()
     except AuthError as err:
+        logging.error("ERROR: Invalid access token; try re-generating an access token from the app console on the web.")
         sys.exit("ERROR: Invalid access token; try re-generating an "
             "access token from the app console on the web.")
 
@@ -165,15 +182,20 @@ if __name__ == '__main__':
 #     backup(r"C:\Users\marashid\Documents\Personal_Stuff\Personal Training and Development\Python\Python_Exercise\tools\sample_CSVs\SimpleCSVSample.csv", "/SimpleCSVSample.csv")
     
     try:
-        print(type(get_my_drpbx_file_metadata("/SimpleCSVSample.csv")))
+        print((get_my_drpbx_file_metadata("/SimpleCSVSample.csv")))
     except ApiError as err:
         if(no_such_file_on_dropbox(err)):
+            logging.error("specified file is not found on Dropbox, check the file name and path are correct.")
             print("specified file is not found on Dropbox, check the file name and path are correct.")
     except ApiError as err:
+        logging.error("some ApiError has occurred which excludes 'file not found on dropbox'")
         print("some ApiError has occurred which excludes 'file not found on dropbox'")
+        logging.error("error returned from ApiError: " + err.error)
         print("error returned from ApiError: " + err.error)
+        logging.error("error message: " + err.user_message_text)
         print("error message: " + err.user_message_text)
     except Exception as exp:
+        logging.error("program is exiting due to unknown exception...")
         sys.exit("program is exiting due to unknown exception...")
 
 ########################################################
