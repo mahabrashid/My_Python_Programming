@@ -1,0 +1,65 @@
+cd into the pyinstaller_artifacts directory create a spec file for the desired script as following:
+---------------------------------------------------------------------------------------------------
+C:\Users\marashid\Documents\Personal_Stuff\Personal Training and Development\Python\Python_Exercise\pyinstaller_artifacts>pyi-makespec ../pythonpractice/hello_pyinstaller.py
+
+
+then go into the created spec file and add the paths where dependecies should be looked for:
+---------------------------------------------------------------------------------------------
+pathex=['..\\pythonpractice', '..\\tools', '.\\']
+
+
+also add any data file (with directory structure) that the module needs to use:
+-------------------------------------------------------------------------------
+datas=[('..\\pythonpractice\\test files\\testfile1.txt', '.\\test files')]
+
+
+finally the spec file should look like:
+---------------------------------------
+# -*- mode: python -*-
+
+block_cipher = None
+
+
+a = Analysis(['..\\pythonpractice\\hello_pyinstaller.py'],
+             pathex=['..\\pythonpractice', '..\\tools', '.\\'],
+             binaries=[],
+             datas=[('..\\pythonpractice\\test files\\testfile1.txt', '.\\test files')],
+             hiddenimports=[],
+             hookspath=[],
+             runtime_hooks=[],
+             excludes=[],
+             win_no_prefer_redirects=False,
+             win_private_assemblies=False,
+             cipher=block_cipher)
+pyz = PYZ(a.pure, a.zipped_data,
+             cipher=block_cipher)
+exe = EXE(pyz,
+          a.scripts,
+          exclude_binaries=True,
+          name='hello_pyinstaller',
+          debug=False,
+          strip=False,
+          upx=True,
+          console=True )
+coll = COLLECT(exe,
+               a.binaries,
+               a.zipfiles,
+               a.datas,
+               strip=False,
+               upx=True,
+               name='hello_pyinstaller')
+
+
+then run the pyinstaller command with --distpath and --workpath params as following:
+------------------------------------------------------------------------------------
+C:\Users\marashid\Documents\Personal_Stuff\Personal Training and Development\Python\Python_Exercise\pyinstaller_artifacts>pyinstaller --distpath=./ --workpath=./temp_workfiles/ hello_pyinstaller.spec
+
+
+INFO ONLY: the paths can also be added on the command line (instead of spec file) as below:
+-------------------------------------------------------------------------------------------
+C:\Users\marashid\Documents\Personal_Stuff\Personal Training and Development\Python\Python_Exercise\pyinstaller_artifacts>pyi-makespec --path=..\pythonpractice;..\tools ..\pythonpractice\hello_pyinstaller.py
+
+
+INFO ONLY: in case of more than 1 scripts to add to the executable, the scripts can be fed into the command-line as below:
+--------------------------------------------------------------------------------------------------------------------------
+C:\Users\marashid\Documents\Personal_Stuff\Personal Training and Development\Python\Python_Exercise\pyinstaller_artifacts>pyinstaller --distpath=./ --workpath=./temp_workfiles/ ../pythonpractice\test_logging.py ../pythonpractice/testAway.py ../tools/my_logging.py

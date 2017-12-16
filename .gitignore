@@ -9,3 +9,13 @@ R80_Mgmt
 *dist*
 *data_files*
 *Logs*
+#don't include content within pyinstaller_artifacts
+*/pyinstaller_artifacts/*
+#except the .spec files, cookbook and temp_workfiles
+!*/pyinstaller_artifacts/*.spec
+!*/pyinstaller_artifacts/hello_pyinstaller-cookbook.txt
+!*/pyinstaller_artifacts/temp_workfiles/
+#don't include content within temp_workfiles
+*/pyinstaller_artifacts/temp_workfiles/*
+#except the readme file within it
+!*/pyinstaller_artifacts/temp_workfiles/readme.txt
