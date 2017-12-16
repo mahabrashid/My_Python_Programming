@@ -41,3 +41,13 @@ def do_something2():
     
 def do_something3():
     logging.info('Doing something3')
+    
+def do_something4():
+    logging.info('Doing something4')
+    try:
+        print("printing the content of testfile1.txt now...")
+        with open("./test files/testfile1.txt", 'r') as file:
+            print(file.read())
+    except FileNotFoundError as err:
+        print((err.strerror + ": ./test files/testfile1.txt"))
+        logging.error(err.strerror + ": ./test files/testfile1.txt")

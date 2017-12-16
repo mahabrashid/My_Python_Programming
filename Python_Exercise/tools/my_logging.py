@@ -6,6 +6,7 @@ Created on 10 Dec 2017
 import inspect
 import os
 
+import logging
 from logging import FileHandler
 
 
@@ -35,6 +36,6 @@ class MyFileHandler(FileHandler):  # # inherit from logging.FileHandler
                 print("created logs directory")
             filepath = os.path.join("./Logs/", caller_module_name + ".log")
         
-        print("filepath: " + filepath)
+        print("path to log file: " + filepath)
         # # finally call the FileHandler super constructor
         FileHandler.__init__(self, filepath)
