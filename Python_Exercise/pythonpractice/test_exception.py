@@ -6,7 +6,7 @@ Created on 21 Nov 2017
 import linecache
 import sys
 
-def PrintException():
+def print_detailed_exception():
     print(sys.exc_info())
     exc_type, exc_obj, tb = sys.exc_info()
     f = tb.tb_frame
@@ -16,7 +16,16 @@ def PrintException():
     line = linecache.getline(filename, lineno, f.f_globals)
     print('EXCEPTION IN ({}, LINE {} "{}"): {}'.format(filename, lineno, line.strip(), exc_obj))
     
-try:
-    print(1/0)
-except:
-    PrintException()
+def raise_user_defined_exception():
+    try:
+        print("raising exception now...")
+        raise RuntimeError("raised a custom exception")
+    except RuntimeError as rterr:
+        print(rterr.__str__())
+        
+# try:
+#     print(1/0)
+# except:
+#     PrintException()
+
+raise_user_defined_exception()
