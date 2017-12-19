@@ -2,11 +2,10 @@
 
 block_cipher = None
 
-
-a = Analysis(['..\\pythonpractice\\hello_you.py'],
-             pathex=['..\\pythonpractice', '..\\tools', 'C:\\Users\\marashid\\Documents\\Personal_Stuff\\Personal Training and Development\\Python\\Python_Exercise\\pyinstaller_artifacts'],
+a = Analysis(['..\\tools\\backup_my_listed_files_to_drpbx.py'],
+             pathex=['.\\pyinstaller_artifacts', '..\\Python_Exercise\\tools', '..\\Python_Exercise\\pythonpractice'],
              binaries=[],
-             datas=[('..\\pythonpractice\\test files\\testfile1.txt', '.\\test files')],
+             datas=[('..\\tools\\data_files\\*.*', '.\\data_files\\')],
              hiddenimports=[],
              hookspath=[],
              runtime_hooks=[],
@@ -19,7 +18,7 @@ pyz = PYZ(a.pure, a.zipped_data,
 exe = EXE(pyz,
           a.scripts,
           exclude_binaries=True,
-          name='hello_you',
+          name='backup_my_listed_files_to_drpbx',
           debug=False,
           strip=False,
           upx=True,
@@ -30,4 +29,4 @@ coll = COLLECT(exe,
                a.datas,
                strip=False,
                upx=True,
-               name='hello_you')
+               name='backup_my_listed_files_to_drpbx')
