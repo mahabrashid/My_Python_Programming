@@ -4,7 +4,7 @@ Created on 2 Dec 2017
 @author: marashid
 '''
 import os, sys
-from _datetime import datetime, timedelta
+from _datetime import datetime, timedelta, date
 import logging
 
 from dropbox.exceptions import ApiError
@@ -128,8 +128,8 @@ def _backup_local2_drpbx(_local_path, _backup_path):
                 print(exp.__str__() + ", cannot backup {} to {}".format(_local_path, _backup_path))    
          
         elif(leading_time == drpbx_file_modified_time):
-            logging.info("dropbox file is ahead of the local copy, downloading latest file from dropbox...(***yet to implement***)")
-            print("dropbox file is ahead of the local copy, downloading latest file from dropbox...(***yet to implement***)")
+            logging.info("dropbox file is ahead of the local copy, downloading latest file from dropbox...[download skipped]") ## ***yet to implement***
+            print("dropbox file is ahead of the local copy, downloading latest file from dropbox...[download skipped]") ## ***yet to implement***
          
         else:
             logging.info("both files are same (ignoring updates in last 5 hours). No upload/download has taken place.")
@@ -138,7 +138,7 @@ def _backup_local2_drpbx(_local_path, _backup_path):
 ##### End of Function Definitions #####
 
 ## enable logging
-my_logfile_handler = MyFileHandler()
+my_logfile_handler = MyFileHandler("./Logs/{}{}.log".format(date.today().__format__("%Y%m%d"), os.path.basename(__file__)))
 logging.basicConfig(filename=my_logfile_handler.baseFilename, level=logging.INFO,
                         format='%(asctime)s %(module)s.%(funcName)s line:%(lineno)s: %(levelname)-8s [%(process)d] %(message)s')
 
@@ -146,7 +146,7 @@ logging.basicConfig(filename=my_logfile_handler.baseFilename, level=logging.INFO
 dropbox_api_gateway.initiate_drpbx_obj()
 
 ## read all Local files and their corresponding dropbox locations from a csv file
-csv_file = "./data_files/files_to_backup_test.csv"
+csv_file = "./data_files/files_to_backup.csv"
 try:
     my_backup_files_list = csv_reader.read_csv(csv_file)    
 except Exception as err:
