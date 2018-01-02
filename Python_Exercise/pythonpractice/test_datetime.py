@@ -36,8 +36,7 @@ def manipulate_using_replace(orig_time):
     print(new_orig_time.minute)
     print(new_orig_time.second)
 
-'''
-A timedelta object represents a duration, the difference between two dates or times.
+''' A timedelta object represents a duration, the difference between two dates or times.
 ex: timedelta(weeks=40|days=84|hours=23|minutes=50|seconds=600)
 '''   
 def manipulate_using_timedelta(orig_time):
@@ -59,7 +58,8 @@ def manipulate_using_timedelta(orig_time):
     print(new_orig_time.minute)
     print(new_orig_time.second)
 
-### source: https://docs.python.org/3.6/library/datetime.html?highlight=datetime#datetime.datetime    
+''' source: https://docs.python.org/3.6/library/datetime.html?highlight=datetime#datetime.datetime
+'''
 def birthday_example():
     today = date.today()
     print(today.__str__)
@@ -74,7 +74,8 @@ def birthday_example():
     time_to_birthday = abs(my_birthday - today)
     print(time_to_birthday.days)
 
-### source: https://docs.python.org/3.6/library/datetime.html?highlight=datetime#datetime.datetime
+''' source: https://docs.python.org/3.6/library/datetime.html?highlight=datetime#datetime.datetime
+'''
 def timedelta_example():
     year = timedelta(days=365)
     another_year = timedelta(weeks=40, days=84, hours=23, minutes=50, seconds=600)  # adds up to 365 days
@@ -92,7 +93,23 @@ def timedelta_example():
     
     print(abs(three_years - ten_years) == 2 * three_years + year)
     
+'''
+print today using a custom format
+'''
+def print_date():
+    print(date.today().__format__("%Y%m%d"))
+
+'''
+print current using a custom format
+'''
+def print_time():
+#     print(datetime.now().__str__())
+    print(datetime.now().__format__("%H:%M:%S"))
+
+    
 # manipulate_using_replace(datetime.today())
-manipulate_using_timedelta(datetime.today())
+# manipulate_using_timedelta(datetime.today())
 # birthday_example()
 # timedelta_example()
+print_date()
+print_time()
