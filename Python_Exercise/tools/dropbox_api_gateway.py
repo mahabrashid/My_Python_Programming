@@ -73,14 +73,18 @@ def backup(LOCALFILE, BACKUPPATH):  ##### modified to include the parameters    
                 logging.error("ERROR: Cannot back up; insufficient space.")
                 sys.exit("ERROR: Cannot back up; insufficient space.")
         except Exception as exp:
-            if ("The write operation timed out" in (str(exp.__str__())) and (dbx._timeout < 120)):    ## if a timeout occurs, increase the _timeout by 30 seconds and try again until _timeout value reaches 2 minutes
-                logging.debug("Timeout occurred during write operation, increasing the timeout by 30 seconds...")
-                print("Timeout occurred during write operation, increasing the timeout by 30 seconds...")
-                dbx._timeout += 30
-                logging.debug("New timeout value is: " + dbx._timeout.__str__())
-                print("New timeout value is: " + dbx._timeout.__str__())
-                backup(LOCALFILE, BACKUPPATH)
-                
+            if ("The write operation timed out" in str(exp.__str__())):
+                if (dbx._timeout < 150):    ## if a timeout occurs, increase the _timeout by 30 seconds and try again until _timeout value reaches 2 minutes
+                    logging.debug("Timeout occurred during write operation, increasing the timeout by 30 seconds...")
+                    print("Timeout occurred during write operation, increasing the timeout by 30 seconds...")
+                    dbx._timeout += 30
+                    logging.debug("New timeout value is: " + dbx._timeout.__str__())
+                    print("New timeout value is: " + dbx._timeout.__str__())
+                    backup(LOCALFILE, BACKUPPATH)
+                else:
+                    logging.error("Aborting writing attempt after long timeout, could not upload {} to {}".format(LOCALFILE, BACKUPPATH))
+                    print("Aborting writing attempt after long timeout, could not upload {} to {}".format(LOCALFILE, BACKUPPATH))
+                    
             ## following are some example of how an exception thrown from this method call can be handled by the caller
 #             elif err.user_message_text:
 #                 logging.error(err.user_message_text + "cannot backup {} to {}".format(LOCALFILE, BACKUPPATH))
