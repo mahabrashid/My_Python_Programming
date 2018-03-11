@@ -1,0 +1,379 @@
+{
+   "checksum": "712d9449e2eb0a6ac67381f3958d3bea",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "children": [ {
+               "date_added": "13089531331851621",
+               "id": "7",
+               "name": "Competitive Wiki - Products Information - Check Point Wiki",
+               "type": "url",
+               "url": "http://wiki.checkpoint.com/confluence/display/PRODUCTINFO/Competitive+Wiki"
+            }, {
+               "date_added": "13089552208549881",
+               "id": "8",
+               "name": "Sales Tools Booklet",
+               "type": "url",
+               "url": "http://cpi.checkpoint.com/hr_lms/tutorials/Tutorials/sales_training/M7/M7_Sales_Tools_Deep-dive_040213_V3/res/attachments/Start%20-%20Sales%20Tools%20Booklet.html#9"
+            } ],
+            "date_added": "13096657424376833",
+            "date_modified": "0",
+            "id": "6",
+            "name": "Useful Links",
+            "type": "folder"
+         }, {
+            "children": [ {
+               "children": [ {
+                  "date_added": "13092161366846855",
+                  "id": "11",
+                  "name": "Capsule SE Training - Shared Space - Check Point Wiki",
+                  "type": "url",
+                  "url": "http://wiki.checkpoint.com/confluence/display/CPPublic/Capsule+SE+Training"
+               } ],
+               "date_added": "13096657424377575",
+               "date_modified": "0",
+               "id": "10",
+               "name": "Capsule",
+               "type": "folder"
+            }, {
+               "children": [ {
+                  "date_added": "13092161366837853",
+                  "id": "13",
+                  "name": "Attachments - Competitive Wiki - Products Information - Check Point Wiki",
+                  "type": "url",
+                  "url": "http://wiki.checkpoint.com/confluence/pages/viewpageattachments.action?pageId=103924972&highlight=WHY_CP_2015_internal_hezi.pptx#Competitive+Wiki-attachment-WHY_CP_2015_internal_hezi.pptx"
+               }, {
+                  "date_added": "13092161366829850",
+                  "id": "14",
+                  "name": "Competitive Wiki - Products Information - Check Point Wiki",
+                  "type": "url",
+                  "url": "http://wiki.checkpoint.com/confluence/display/PRODUCTINFO/Competitive+Wiki"
+               }, {
+                  "date_added": "13092161366783836",
+                  "id": "15",
+                  "name": "Palo Alto Networks PAN-OS 7.0 Evasion Test - Evader - YouTube",
+                  "type": "url",
+                  "url": "https://www.youtube.com/watch?v=bdMZin0r59A"
+               }, {
+                  "date_added": "13092161366822848",
+                  "id": "16",
+                  "name": "Products Information + Competitive Links - Check Point Wiki",
+                  "type": "url",
+                  "url": "http://wiki.checkpoint.com/confluence/display/PRODUCTINFO/Products+Information+Home"
+               }, {
+                  "date_added": "13092161366800842",
+                  "id": "17",
+                  "name": "ngfw1 portal",
+                  "type": "url",
+                  "url": "https://portal.ngfw1.com/Login/Login"
+               } ],
+               "date_added": "13096657424377699",
+               "date_modified": "0",
+               "id": "12",
+               "name": "Competitive",
+               "type": "folder"
+            }, {
+               "children": [ {
+                  "date_added": "13092161366936882",
+                  "id": "20",
+                  "name": "My Product Center - Check Point PartnerMAP - Partners Portal for Licensing, Support and Account Management",
+                  "type": "url",
+                  "url": "https://usercenter.checkpoint.com/usercenter/portal/media-type/html/role/usercenterUser/page/default.psml/js_pane/AccountsId%2CProductsCenterId"
+               }, {
+                  "date_added": "13092161366952887",
+                  "id": "27",
+                  "name": "Login to Ravello Systems",
+                  "type": "url",
+                  "url": "https://login.ravellosystems.com/cas/login?service=https%3A%2F%2Fcloud.ravellosystems.com%2FloginSuccess%3Fservice%3DaHR0cHM6Ly9jbG91ZC5yYXZlbGxvc3lzdGVtcy5jb20v"
+               }, {
+                  "date_added": "13092161366959889",
+                  "id": "28",
+                  "name": "Ravello VMs for Threat Prevention Training",
+                  "type": "url",
+                  "url": "http://31.220.69.196/#/student/class/apps"
+               } ],
+               "date_added": "13096657424378108",
+               "date_modified": "13097842762619146",
+               "id": "18",
+               "name": "CP Tools & Portals",
+               "type": "folder"
+            }, {
+               "children": [ {
+                  "date_added": "13092161366887868",
+                  "id": "22",
+                  "name": "Mobile Threat Prevention - Products Information - Check Point Wiki",
+                  "type": "url",
+                  "url": "http://wiki.checkpoint.com/confluence/display/PRODUCTINFO/Mobile+Threat+Prevention"
+               }, {
+                  "date_added": "13092161366900872",
+                  "id": "23",
+                  "name": "Mobile Threat Prevention Demo - Products Information - Check Point Wiki",
+                  "type": "url",
+                  "url": "http://wiki.checkpoint.com/confluence/display/PRODUCTINFO/Mobile+Threat+Prevention+Demo"
+               }, {
+                  "date_added": "13092161366894870",
+                  "id": "24",
+                  "name": "iOS Demo Dashboard",
+                  "type": "url",
+                  "url": "https://demo-dash.locsec.net/login/?next=/"
+               } ],
+               "date_added": "13096657424378296",
+               "date_modified": "0",
+               "id": "21",
+               "name": "MTP",
+               "type": "folder"
+            }, {
+               "children": [ {
+                  "date_added": "13092161366966891",
+                  "id": "26",
+                  "name": "(1) SE Entry Level Training Page - Check Point Training - Check Point Wiki",
+                  "type": "url",
+                  "url": "http://wiki.checkpoint.com/confluence/display/CPTRAIN/SE+Entry+Level+Training+Page"
+               } ],
+               "date_added": "13096657424378531",
+               "date_modified": "0",
+               "id": "25",
+               "name": "SE Entry Level Training",
+               "type": "folder"
+            }, {
+               "children": [ {
+                  "date_added": "13092161366864861",
+                  "id": "30",
+                  "name": "POC guidelines  Threat Emulation - Products Information - Check Point Wiki",
+                  "type": "url",
+                  "url": "http://wiki.checkpoint.com/confluence/display/PRODUCTINFO/POC+guidelines:+Threat+Emulation"
+               }, {
+                  "date_added": "13092161366857859",
+                  "id": "31",
+                  "name": "SandBlast Agent - Products Information - Check Point Wiki",
+                  "type": "url",
+                  "url": "http://wiki.checkpoint.com/confluence/display/PRODUCTINFO/SandBlast+Agent"
+               }, {
+                  "date_added": "13092161366882866",
+                  "id": "32",
+                  "name": "Threat Prevention Basic+ Training R77 Versions - Check Point Training - Check Point Wiki",
+                  "type": "url",
+                  "url": "http://wiki.checkpoint.com/confluence/pages/viewpage.action?pageId=131881152"
+               } ],
+               "date_added": "13096657424378785",
+               "date_modified": "0",
+               "id": "29",
+               "name": "TP",
+               "type": "folder"
+            }, {
+               "children": [ {
+                  "date_added": "13092161366930881",
+                  "id": "34",
+                  "name": "Check Point Commands",
+                  "type": "url",
+                  "url": "https://www.fir3net.com/Firewalls/Check-Point/checkpoint-commands.html"
+               }, {
+                  "date_added": "13092161366924879",
+                  "id": "35",
+                  "name": "Introduction to the GAIA Command Line Interface",
+                  "type": "url",
+                  "url": "https://sc1.checkpoint.com/documents/R76/CP_R76_Gaia_WebAdmin/75697.htm"
+               }, {
+                  "date_added": "13092161366916876",
+                  "id": "36",
+                  "name": "NSS Labs - Products Information - Check Point Wiki",
+                  "type": "url",
+                  "url": "http://wiki.checkpoint.com/confluence/display/PRODUCTINFO/NSS+Labs"
+               } ],
+               "date_added": "13096657424379067",
+               "date_modified": "0",
+               "id": "33",
+               "name": "Useful Links",
+               "type": "folder"
+            }, {
+               "children": [ {
+                  "date_added": "13097846693373470",
+                  "id": "64",
+                  "name": "Security Checkup Tool v1.204 for R77.30",
+                  "type": "url",
+                  "url": "https://supportcenter.checkpoint.com/supportcenter/portal/user/anon/page/default.psml/media-type/html?action=portlets.DCFileAction&eventSubmit_doGetdcdetails=&fileid=24867"
+               }, {
+                  "date_added": "13092161366909874",
+                  "id": "37",
+                  "name": "Security Checkup - Sales - Check Point Wiki",
+                  "type": "url",
+                  "url": "http://wiki.checkpoint.com/confluence/display/SALES/Security+Checkup"
+               } ],
+               "date_added": "13097845777628994",
+               "date_modified": "13097846809415705",
+               "id": "63",
+               "name": "Security Checkup",
+               "type": "folder"
+            } ],
+            "date_added": "13096657424377363",
+            "date_modified": "13097846693373470",
+            "id": "9",
+            "name": "CheckPoint",
+            "type": "folder"
+         }, {
+            "children": [ {
+               "date_added": "13089544402596832",
+               "id": "39",
+               "name": "20.3. Configuring a DHCP Client",
+               "type": "url",
+               "url": "https://www.centos.org/docs/5/html/Deployment_Guide-en-US/s1-dhcp-configuring-client.html"
+            }, {
+               "date_added": "13092161367028910",
+               "id": "40",
+               "name": "How can I determine which ports a specific process is using on Windows XP and later    Windows XP content from Windows IT Pro",
+               "type": "url",
+               "url": "http://windowsitpro.com/windows-xp/how-can-i-determine-which-ports-specific-process-using-windows-xp-and-later"
+            }, {
+               "date_added": "13092161367034912",
+               "id": "41",
+               "name": "How do I know what service is running on a particular port in linux ",
+               "type": "url",
+               "url": "http://unix.stackexchange.com/questions/62247/how-do-i-know-what-service-is-running-on-a-particular-port-in-linux"
+            }, {
+               "date_added": "13089544402571832",
+               "id": "42",
+               "name": "How to Change HostName and IP-Address in CentOS   RedHat Linux",
+               "type": "url",
+               "url": "http://www.thegeekstuff.com/2013/10/change-hostname-ip-address/"
+            }, {
+               "date_added": "13092161367014906",
+               "id": "43",
+               "name": "How to use the watch command, by The Linux Information Project (LINFO)",
+               "type": "url",
+               "url": "http://www.linfo.org/watch.html"
+            }, {
+               "date_added": "13089544402604332",
+               "id": "44",
+               "name": "Linux - Restarting the network interface using command lines",
+               "type": "url",
+               "url": "http://ccm.net/faq/1141-linux-restarting-the-network-interface-using-command-lines"
+            }, {
+               "date_added": "13092161367042914",
+               "id": "45",
+               "name": "Linux Static IP Configuration - Linode Guides & Tutorials",
+               "type": "url",
+               "url": "https://www.linode.com/docs/networking/linux-static-ip-configuration"
+            }, {
+               "date_added": "13089544402556832",
+               "id": "46",
+               "name": "Online IP Subnet Calculator",
+               "type": "url",
+               "url": "http://www.subnet-calculator.com/subnet.php?net_class=A"
+            }, {
+               "date_added": "13089544402594332",
+               "id": "47",
+               "name": "Open http port ( 80 ) in iptables on CentOS",
+               "type": "url",
+               "url": "http://www.binarytides.com/open-http-port-iptables-centos/"
+            }, {
+               "date_added": "13092161367022908",
+               "id": "48",
+               "name": "TCPDump port, host, and interface - TunnelsUP",
+               "type": "url",
+               "url": "http://www.tunnelsup.com/tcpdump-specify-interface-host-and-port"
+            }, {
+               "date_added": "13089544402546832",
+               "id": "49",
+               "name": "Unix Less Command  10 Tips for Effective Navigation",
+               "type": "url",
+               "url": "http://www.thegeekstuff.com/2010/02/unix-less-command-10-tips-for-effective-navigation/"
+            }, {
+               "date_added": "13089544402586832",
+               "id": "50",
+               "name": "search - Finding all files containing a text string on Linux - Stack Overflow",
+               "type": "url",
+               "url": "http://stackoverflow.com/questions/16956810/finding-all-files-containing-a-text-string-on-linux"
+            } ],
+            "date_added": "13096657424379386",
+            "date_modified": "0",
+            "id": "38",
+            "name": "Linux",
+            "type": "folder"
+         }, {
+            "children": [ {
+               "date_added": "13092161367008904",
+               "id": "52",
+               "name": "Adding a TCP IP Route to the Windows Routing Table",
+               "type": "url",
+               "url": "http://www.howtogeek.com/howto/windows/adding-a-tcpip-route-to-the-windows-routing-table/"
+            }, {
+               "date_added": "13092161367002902",
+               "id": "53",
+               "name": "service-names-port-numbers.txt",
+               "type": "url",
+               "url": "https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.txt"
+            } ],
+            "date_added": "13096657424380728",
+            "date_modified": "0",
+            "id": "51",
+            "name": "Networking",
+            "type": "folder"
+         }, {
+            "children": [ {
+               "date_added": "13092161366972893",
+               "id": "55",
+               "name": "8 most in-demand IT security certifications   CIO",
+               "type": "url",
+               "url": "http://www.cio.com/article/2951115/certifications/8-most-in-demand-it-security-certifications.html#slide1"
+            }, {
+               "date_added": "13092161366996900",
+               "id": "56",
+               "name": "How To Use OpenVAS to Audit the Security of Remote Systems on Ubuntu 12.04   DigitalOcean",
+               "type": "url",
+               "url": "https://www.digitalocean.com/community/tutorials/how-to-use-openvas-to-audit-the-security-of-remote-systems-on-ubuntu-12-04"
+            }, {
+               "date_added": "13092161366989898",
+               "id": "57",
+               "name": "How to scan website vulnerabilities with OpenVas ( Pentest , Hack ) BackBox 3.0 - YouTube",
+               "type": "url",
+               "url": "https://www.youtube.com/watch?v=yteOXbX51rY"
+            }, {
+               "date_added": "13092161366984897",
+               "id": "58",
+               "name": "Self-Study   Training   CompTIA IT Certifications",
+               "type": "url",
+               "url": "https://certification.comptia.org/training/self-study"
+            }, {
+               "date_added": "13092161366978895",
+               "id": "59",
+               "name": "Top Cyber Security Certifications 2015",
+               "type": "url",
+               "url": "https://www.linkedin.com/pulse/top-10-cyber-security-certifications-2015-sid-vanderloot"
+            } ],
+            "date_added": "13096657424381129",
+            "date_modified": "0",
+            "id": "54",
+            "name": "OpenSource etc",
+            "type": "folder"
+         }, {
+            "date_added": "13092161366775834",
+            "id": "60",
+            "name": "Core Syllabus - UKM Instructor - Stewart McGill",
+            "type": "url",
+            "url": "http://urbankravmaga.london/urban-krav-maga-self-defence/core-syllabus/"
+         } ],
+         "date_added": "13096657253530945",
+         "date_modified": "0",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13096657253530955",
+         "date_modified": "0",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13096657253530957",
+         "date_modified": "0",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}
