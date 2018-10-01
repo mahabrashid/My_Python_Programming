@@ -6,10 +6,10 @@ In the book Learning Python by Mark Lutz, he suggests the following mnenomic for
 
 Going from the narrowest scope to the widest scope:
 
-L stands for “Local”. It refers to variables that are defined in the local scope of functions.
-E stands for “Enclosing”. It refers to variables defined in the local scope of functions wrapping other functions.
-G stands for “Global”. These are the variables defined at the top level of files and modules.
-B stands for “Built in”. These are the names that are loaded into scope when the interpreter starts up. You can look at them here: https://docs.python.org/3.5/library/functions.html
+L stands for "Local". It refers to variables that are defined in the local scope of functions.
+E stands for "Enclosing". It refers to variables defined in the local scope of functions wrapping other functions.
+G stands for "Global". These are the variables defined at the top level of files and modules.
+B stands for "Built in". These are the names that are loaded into scope when the interpreter starts up. You can look at them here: https://docs.python.org/3.5/library/functions.html
 '''
 var = "value assigned in module or global level"   # var declared at module-level, aka global level
 
@@ -37,12 +37,12 @@ def checking_modified_var_in_other_func():
 
 # errorsome_func()    
 # shadowing_var()
-# 
+#  
 # print("module-level var before modifying in the method: ", var)
 # accessing_global_var() # let's modify the global var here
 # print("module-level var after modifying in the method: ", var)
 # print("-"*10)
-# 
+#  
 # checking_modified_var_in_other_func()    # let's check what the global var is now
 
 
@@ -98,8 +98,8 @@ def changing_var_declared_in_enclosing_func():
     func_lvl1()    
     print("-"*10)
 
-print("Check out the local declaration behaviour in nested functions:")
-var_in_nested_func()
-
-print("Finally, check out the nonlocal declaration behaviour in nested functions:")
-changing_var_declared_in_enclosing_func()
+# print("Check out the local declaration behaviour in nested functions:")
+# var_in_nested_func()
+# 
+# print("Finally, check out the nonlocal declaration behaviour in nested functions:")
+# changing_var_declared_in_enclosing_func()
