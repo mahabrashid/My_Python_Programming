@@ -2,7 +2,7 @@
 '''
 ### Standard Code Layout and Naming Convention
 1.	Python PEP8 code standard site: https://www.python.org/dev/peps/pep-0008/
-2.	4 spaces to indicate one level of indentation, don’t use tab characters
+2.	4 spaces to indicate one level of indentation, don't use tab characters
 3.	A single line of code should not exceed 17-19 characters
 4.	Import statements should be at the top of the module
 5.	Standard libraries should be imported first, then third party modules and import from other modules in the same project
@@ -10,10 +10,10 @@
 7.	Classes and Functions at the top level can have 2 blank lines between them
 8.	Methods within a Class should have 1 blank line separating them
 9.	Within a method, blank lines should be inserted to separate conceptual grouping of code
-10.	Don’t insert extra space before parenthesis, brackets or braces
-11.	 Don’t insert space before commas and colons
+10.	Don't insert extra space before parenthesis, brackets or braces
+11.	Don't insert space before commas and colons
 12.	Always put a single space on either sides of binary operators
-13.	Don’t put more than 1 statement on the same line
+13.	Don't put more than 1 statement on the same line
 14.	Comments should be in human language
 15.	Comment should precede every section of code describing the code and be indented at the code level
 16.	Every public module, class, or method should have a properly formatted doc string
@@ -50,7 +50,7 @@ b = ['|||']
 ### Tuple ###
 '''
 red = (255, 0, 0)
-print red[2]
+print(red[2])
 for r in red:
 	print(r)
 '''

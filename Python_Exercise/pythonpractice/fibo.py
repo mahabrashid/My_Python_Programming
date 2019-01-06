@@ -7,7 +7,7 @@ def fib(n):    # write Fibonacci series up to n
     a, b = 0, 1
     
     while b < n:
-        print(b, end=' ')
+        print(b, end=' ') # will print b without new line every time, i.e on the same line. Appends a space instead of a newline
         a, b = b, a+b
     print() ## just prints a blank line
     
