@@ -29,6 +29,27 @@
 '''
 
 '''
+### Declaration of docstrings
+"""
+Assuming this is file mymodule.py, then this string, being the
+first statement in the file, will become the "mymodule" module's
+docstring when the file is imported.
+"""
+ 
+class MyClass(object):
+    """The class's docstring"""
+ 
+    def my_method(self):
+        """The method's docstring"""
+ 
+def my_function():
+    """The function's docstring
+    which can even be
+    across multiple lines if need to be
+    """
+'''
+
+'''
 ### some observations:
 1. Python will let you assign a variable to a method call that doesn't return. This will return a None value which is assigned to the variable. This wouldn't be possible in java, a call to a method with return type "void" wouldn't be allowed to be assigned to a variable.
 '''
